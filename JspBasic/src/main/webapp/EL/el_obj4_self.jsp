@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/JspBasic/resp">
-		나이: <input type="text" name="customerAge" maxlength="2"><br>
+	<form action="/JspBasic/el/obj_self">
+		#아이디 : <input type="text" name="id"><br> #비밀번호 : <input
+			type="password" name="pw"><br> #이름 : <input type="text"
+			name="name"><br> #이메일 : <input type="text" name="email"><br>
 		<input type="submit" value="확인">
 	</form>
 </body>

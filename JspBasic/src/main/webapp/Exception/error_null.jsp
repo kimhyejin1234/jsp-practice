@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>당신은 미성년자 입니다.</h2>
-	<p>주류및 담배는 구입이 안됩니다.</p>
+
+	<h4>null 에러 입니다.</h4>
+
 </body>
 </html>

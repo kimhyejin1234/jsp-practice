@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>당신은 미성년자 입니다.</h2>
-	<p>주류및 담배는 구입이 안됩니다.</p>
+	<form action="jstl_choose_test.jsp">
+		#점수를 입력하세요: <input type="text" name="point" size="5">점<br>
+		<input type="submit" value="확인">
+	</form>
+
+
 </body>
 </html>

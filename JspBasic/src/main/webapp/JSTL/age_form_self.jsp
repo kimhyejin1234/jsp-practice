@@ -7,7 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>당신은 미성년자 입니다.</h2>
-	<p>주류및 담배는 구입이 안됩니다.</p>
+	
+	<form action="jstl_choose_self.jsp">
+		#이름 :  <input type="text" name="name"><br>
+		#나이 :  <input type="text" name="age"><br>
+		<input type="submit" value="확인">
+		
+	</form>
+
 </body>
 </html>

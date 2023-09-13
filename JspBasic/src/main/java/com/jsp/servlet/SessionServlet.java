@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet("/session/login")
+@WebServlet("/session/Login")
 public class SessionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -20,7 +20,12 @@ public class SessionServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("로그아웃 요청이 들어옴!");
+		//특정 세션 대이터를 삭제하는 메서드
+		request.getSession().removeAttribute("user_id");
+		//모든 세션 데이터 삭제하는 벗(세션 객체 자체를 무효화)
+//		request.getSession().invalidate();
+		response.sendRedirect("/JspBasic/session/session_login.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,6 +44,10 @@ public class SessionServlet extends HttpServlet {
 			
 			HttpSession session =  request.getSession();
 			session.setAttribute("user_id",id);
+
+			//세션의 유효 기간 설정
+			//세션의 수명은 새로운 요청이 서버로 들어오면 초기화 됩니다.
+			session.setMaxInactiveInterval(60 * 60 * 24 );//60초 * 60 * 24 = 1일
 			response.sendRedirect("/JspBasic/session/session_welcome.jsp");
 		}else {
 			response.setContentType("text/html");
